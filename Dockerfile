@@ -1,8 +1,5 @@
-FROM node:14-slim
+FROM busybox 
 
-WORKDIR /usr/src/app
-COPY package*.json ./
-RUN npm install
-COPY . .
+ENTRYPOINT ["/bin/sh"]
+CMD ["-c", "while true; do nc -l -p 8080 -e echo -e 'HTTP/1.1 200 OK\n\ndate'; done"]
 EXPOSE 8080
-CMD [ "node", "server.js" ]
