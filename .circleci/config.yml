@@ -5,7 +5,7 @@ jobs:
       - image: circleci/node:14
     steps:
       - checkout
-      - build
+      - run: echo "hello world"
 
 workflows:
   version: 2.1
