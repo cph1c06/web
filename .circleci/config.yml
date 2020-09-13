@@ -6,3 +6,11 @@ jobs:
     branches:
       only:
         - nodejs
+workflows:
+  version: 2.1
+  build:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only: nodejs 
